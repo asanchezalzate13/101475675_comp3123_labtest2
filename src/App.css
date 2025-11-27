@@ -1,38 +1,137 @@
-.App {
-  text-align: center;
-}
+/* src/App.css */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Global styles for the app container */
+.weather-app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+
+  /* Apply dark theme and font for UI/UX requirement */
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: #f0f0f0;
+  font-family: 'Arial', sans-serif;
+}
+
+header {
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 300;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Search Bar Styling */
+.search-bar {
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #60a5fa; /* Tailwind blue-400 equivalent */
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Status Messages */
+.status-message {
+  font-size: 1.2em;
+  color: #90cdf4;
+}
+
+.error-message {
+  font-size: 1.2em;
+  color: #fc8181;
+  background-color: rgba(252, 129, 129, 0.1);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+/* Weather Display Card (UI/UX requirement) */
+.weather-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 100%;
+  max-width: 450px;
+  margin-top: 20px;
+}
+
+.city-name {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.main-info {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 15px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.weather-icon {
+  width: 100px;
+  height: 100px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.temperature {
+  font-size: 4em;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.description {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #a0aec0;
+  margin-bottom: 25px;
+}
+
+/* Details Grid */
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  text-align: left;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-item p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #a0aec0;
+}
+
+.detail-item span {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #fff;
 }
